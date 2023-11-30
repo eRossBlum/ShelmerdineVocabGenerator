@@ -1,0 +1,8 @@
+1, agricola, N
+1, aqua, N
+1, amo, V
+2, ager, N
+2, audeo, V
+6, laetus, ADJ
+6, fama, N
+6, doleo, V
