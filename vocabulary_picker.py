@@ -8,14 +8,15 @@ def main() -> None:
     filters = solicit_criteria()
     vocab_list = load_vocab_list('./vocab_list.txt')
     filtered = filter_by_pos(filter_by_chapter(vocab_list, filters[0]), filters[1])
-    print(filtered)
+    for entry in filtered:
+        print(f"Ch. {entry[0]}, {entry[1]}, {entry[2]}")
 
 
 def solicit_criteria() -> tuple:
     print("What chapters do you want? \nType in the form \"beginning-end\" (e.g. \"5-7\". If you want only"
           "one chapter, just type the single number.\nIf you want all chapters, hit enter.")
     chap_text = input()
-    if chap_text is '':
+    if chap_text == '':
         chap_range = None
     else:
        # chap_range = range(*tuple(int(x) for x in chap_text.split('-'))) if '-' in chap_text else range(int(chap_text),
@@ -32,7 +33,7 @@ def solicit_criteria() -> tuple:
                      "Prep: Preposition\n"
                      "Oth: Other\n"
                      "E.g. type \"N V Adv\" for Nouns, Verbs, and Adverbs:\n")
-    if pos_text is '':
+    if pos_text == '':
         desired_pos = None
     else:
         desired_pos = tuple(pos_text.upper().split(' '))
