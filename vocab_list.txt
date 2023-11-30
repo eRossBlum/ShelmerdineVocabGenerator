@@ -6,3 +6,4 @@
 6, laetus, ADJ
 6, fama, N
 6, doleo, V
+12, arbor, N
